@@ -119,18 +119,21 @@ export const OpenAIStream = async (
       const onParse = (event: ParsedEvent | ReconnectInterval) => {
         if (event.type === 'event') {
           const data = event.data;
-
-          try {
-            const json = JSON.parse(data);
-            if (json.choices[0].finish_reason != null) {
-              controller.close();
-              return;
+          // https://github.com/mckaywrigley/chatbot-ui/issues/580#issuecomment-1523023238
+          // Check for [DONE] to fix #580
+          if (data !== '[DONE]') {
+            try {
+              const json = JSON.parse(data);
+              if (json.choices[0].finish_reason != null) {
+                controller.close();
+                return;
+              }
+              const text = json.choices[0].delta.content;
+              const queue = encoder.encode(text);
+              controller.enqueue(queue);
+            } catch (e) {
+              controller.error(e);
             }
-            const text = json.choices[0].delta.content;
-            const queue = encoder.encode(text);
-            controller.enqueue(queue);
-          } catch (e) {
-            controller.error(e);
           }
         }
       };
