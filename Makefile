@@ -8,7 +8,7 @@ build:
 run:
 	export $(cat .env | xargs)
 	docker stop chatbot-ui || true && docker rm chatbot-ui || true
-	docker run --name chatbot-ui --rm -e OPENAI_API_KEY=${OPENAI_API_KEY} -p 3000:3000 chatbot-ui
+	docker run --name chatbot-ui --rm -e OPENAI_API_KEY=${OPENAI_API_KEY} -e OPENAI_API_KEY_3=${OPENAI_API_KEY_3} -e OPENAI_API_KEY_4=${OPENAI_API_KEY_4} -p 3000:3000 chatbot-ui
 
 logs:
 	docker logs -f chatbot-ui

@@ -11,6 +11,8 @@ metadata:
 type: Opaque
 data:
   OPENAI_API_KEY: <base64 encoded key>
+  OPENAI_API_KEY_3: <base64 encoded key>
+  OPENAI_API_KEY_4: <base64 encoded key>
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -41,6 +43,16 @@ spec:
                 secretKeyRef:
                   name: chatbot-ui
                   key: OPENAI_API_KEY
+            - name: OPENAI_API_KEY_3
+                          valueFrom:
+                            secretKeyRef:
+                              name: chatbot-ui
+                              key: OPENAI_API_KEY_3
+            - name: OPENAI_API_KEY_4
+                          valueFrom:
+                            secretKeyRef:
+                              name: chatbot-ui
+                              key: OPENAI_API_KEY_4
 ---
 kind: Service
 apiVersion: v1

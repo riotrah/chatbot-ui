@@ -1,0 +1,4 @@
+{
+    "GitHooks.hooksDirectory": ".git/hooks",
+    "typescript.tsdk": "node_modules/typescript/lib"
+}
