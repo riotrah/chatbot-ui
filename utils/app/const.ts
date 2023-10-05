@@ -4,6 +4,10 @@ export const DEFAULT_SYSTEM_PROMPT =
 
 export const OPENAI_API_HOST =
   process.env.OPENAI_API_HOST || 'https://api.openai.com';
+export const OPENAI_API_HOST_3 =
+  process.env.OPENAI_API_HOST_3 || 'https://api.openai.com';
+export const OPENAI_API_HOST_4 =
+  process.env.OPENAI_API_HOST_4 || 'https://api.openai.com';
 
 export const DEFAULT_TEMPERATURE = 
   parseFloat(process.env.NEXT_PUBLIC_DEFAULT_TEMPERATURE || "1");
@@ -19,3 +23,7 @@ export const OPENAI_ORGANIZATION =
 
 export const AZURE_DEPLOYMENT_ID =
   process.env.AZURE_DEPLOYMENT_ID || '';
+export const AZURE_DEPLOYMENT_ID_3 =
+  process.env.AZURE_DEPLOYMENT_ID_3 || '';
+export const AZURE_DEPLOYMENT_ID_4 =
+  process.env.AZURE_DEPLOYMENT_ID_4 || '';

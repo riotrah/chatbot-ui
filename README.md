@@ -92,11 +92,14 @@ When deploying the application, the following environment variables can be set:
 
 | Environment Variable              | Default value                  | Description                                                                                                                               |
 | --------------------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| OPENAI_API_KEY                    |                                | The default API key used for authentication with OpenAI                                                                                   |
-| OPENAI_API_HOST                   | `https://api.openai.com`       | The base url, for Azure use `https://<endpoint>.openai.azure.com`                                                                         |
 | OPENAI_API_TYPE                   | `openai`                       | The API type, options are `openai` or `azure`                                                                                             |
 | OPENAI_API_VERSION                | `2023-03-15-preview`           | Only applicable for Azure OpenAI                                                                                                          |
-| AZURE_DEPLOYMENT_ID               |                                | Needed when Azure OpenAI, Ref [Azure OpenAI API](https://learn.microsoft.com/zh-cn/azure/cognitive-services/openai/reference#completions) |
+| OPENAI_API_HOST_4                 | `https://api.openai.com`       | The base url, for Azure use, for GPT-4 `https://<endpoint>.openai.azure.com`                                                                         |
+| AZURE_DEPLOYMENT_ID_4             |                                | Needed when Azure OpenAI, for GPT-4, Ref [Azure OpenAI API](https://learn.microsoft.com/zh-cn/azure/cognitive-services/openai/reference#completions) |
+| OPENAI_API_KEY_4                  |                                | The default API key, for GPT-4, used for authentication with OpenAI                                                                                   |
+| OPENAI_API_HOST_3                 | `https://api.openai.com`       | The base url, for Azure use, for GPT-3.5 `https://<endpoint>.openai.azure.com`                                                                         |
+| AZURE_DEPLOYMENT_ID_3             |                                | Same as above, but only for GPT-3.5 |
+| OPENAI_API_KEY_3                  |                                | The default API key, for GPT-3.5, used for authentication with OpenAI                                                                                   |
 | OPENAI_ORGANIZATION               |                                | Your OpenAI organization ID                                                                                                               |
 | DEFAULT_MODEL                     | `gpt-3.5-turbo`                | The default model to use on new conversations, for Azure use `gpt-35-turbo`                                                               |
 | NEXT_PUBLIC_DEFAULT_SYSTEM_PROMPT | [see here](utils/app/const.ts) | The default system prompt to use on new conversations                                                                                     |
